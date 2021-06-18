@@ -1,0 +1,532 @@
+{% load  static %}
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon.png' %}">
+    <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
+    <!-- Custom CSS -->
+    <link href="{% static 'assets/extra-libs/c3/c3.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/libs/chartist/dist/chartist.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css' %}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="{% static 'dist/css/style.min.css' %}" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin6">
+            <nav class="navbar top-navbar navbar-expand-md">
+                <div class="navbar-header" data-logobg="skin6">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
+                            class="ti-menu ti-close"></i></a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <div class="navbar-brand">
+                        <!-- Logo icon -->
+                        <a href="index.html">
+                            <b class="logo-icon">
+                                <!-- Dark Logo icon -->
+                                <img src="{% static 'assets/images/logo-icon.png' %}" alt="homepage" class="dark-logo" />
+                                <!-- Light Logo icon -->
+                                <img src="{% static 'assets/images/logo-icon.png' %}" alt="homepage" class="light-logo" />
+                            </b>
+                            <!--End Logo icon -->
+                            <!-- Logo text -->
+                            <span class="logo-text">
+                                <!-- dark Logo text -->
+                                <span class="text-dark ">Markytics</span>
+                                <!-- <img src="{% static 'assets/images/' %}" alt="homepage" class="dark-logo" /> -->
+                                <!-- Light Logo text -->
+                                <img src="{% static 'assets/images/logo-light-text.png' %}" class="light-logo" alt="homepage" />
+                            </span>
+                        </a>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
+                        data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i
+                            class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
+                        <!-- Notification -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle pl-md-3 position-relative" href="javascript:void(0)"
+                                id="bell" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <span><i data-feather="bell" class="svg-icon"></i></span>
+                                <span class="badge badge-primary notify-no rounded-circle">5</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-left mailbox animated bounceInDown">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="message-center notifications position-relative">
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)"
+                                                class="message-item d-flex align-items-center border-bottom px-3 py-2">
+                                                <div class="btn btn-danger rounded-circle btn-circle"><i
+                                                        data-feather="airplay" class="text-white"></i></div>
+                                                <div class="w-75 d-inline-block v-middle pl-2">
+                                                    <h6 class="message-title mb-0 mt-1">Luanch Admin</h6>
+                                                    <span class="font-12 text-nowrap d-block text-muted">Just see
+                                                        the my new
+                                                        admin!</span>
+                                                    <span class="font-12 text-nowrap d-block text-muted">9:30 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)"
+                                                class="message-item d-flex align-items-center border-bottom px-3 py-2">
+                                                <span class="btn btn-success text-white rounded-circle btn-circle"><i
+                                                        data-feather="calendar" class="text-white"></i></span>
+                                                <div class="w-75 d-inline-block v-middle pl-2">
+                                                    <h6 class="message-title mb-0 mt-1">Event today</h6>
+                                                    <span
+                                                        class="font-12 text-nowrap d-block text-muted text-truncate">Just
+                                                        a reminder that you have event</span>
+                                                    <span class="font-12 text-nowrap d-block text-muted">9:10 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)"
+                                                class="message-item d-flex align-items-center border-bottom px-3 py-2">
+                                                <span class="btn btn-info rounded-circle btn-circle"><i
+                                                        data-feather="settings" class="text-white"></i></span>
+                                                <div class="w-75 d-inline-block v-middle pl-2">
+                                                    <h6 class="message-title mb-0 mt-1">Settings</h6>
+                                                    <span
+                                                        class="font-12 text-nowrap d-block text-muted text-truncate">You
+                                                        can customize this template
+                                                        as you want</span>
+                                                    <span class="font-12 text-nowrap d-block text-muted">9:08 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)"
+                                                class="message-item d-flex align-items-center border-bottom px-3 py-2">
+                                                <span class="btn btn-primary rounded-circle btn-circle"><i
+                                                        data-feather="box" class="text-white"></i></span>
+                                                <div class="w-75 d-inline-block v-middle pl-2">
+                                                    <h6 class="message-title mb-0 mt-1">Pavan kumar</h6> <span
+                                                        class="font-12 text-nowrap d-block text-muted">Just
+                                                        see the my admin!</span>
+                                                    <span class="font-12 text-nowrap d-block text-muted">9:02 AM</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link pt-3 text-center text-dark" href="javascript:void(0);">
+                                            <strong>Check all notifications</strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- End Notification -->
+                        <!-- ============================================================== -->
+                        <!-- create new -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i data-feather="settings" class="svg-icon"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item d-none d-md-block">
+                            <a class="nav-link" href="javascript:void(0)">
+                                <div class="customize-input">
+                                    <select
+                                        class="custom-select form-control bg-white custom-radius custom-shadow border-0">
+                                        <option selected>EN</option>
+                                        <option value="1">AB</option>
+                                        <option value="2">AK</option>
+                                        <option value="3">BE</option>
+                                    </select>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item d-none d-md-block">
+                            <a class="nav-link" href="javascript:void(0)">
+                                <form>
+                                    <div class="customize-input">
+                                        <input class="form-control custom-shadow custom-radius border-0 bg-white"
+                                            type="search" placeholder="Search" aria-label="Search">
+                                        <i class="form-control-icon" data-feather="search"></i>
+                                    </div>
+                                </form>
+                            </a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <img src="{%static 'assets/images/users/profile-pic.jpg' %}" alt="user" class="rounded-circle"
+                                    width="40">
+                                    
+                                <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
+                                        class="text-dark">{{request.user}}</span> <i data-feather="chevron-down"
+                                        class="svg-icon"></i></span>
+                                       
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="user"
+                                        class="svg-icon mr-2 ml-1"></i>
+                                    My Profile</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="credit-card"
+                                        class="svg-icon mr-2 ml-1"></i>
+                                    My Balance</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="mail"
+                                        class="svg-icon mr-2 ml-1"></i>
+                                    Inbox</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="settings"
+                                        class="svg-icon mr-2 ml-1"></i>
+                                    Account Setting</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="power"
+                                        class="svg-icon mr-2 ml-1"></i>
+                                    Logout</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="pl-4 p-3"><a href="javascript:void(0)" class="btn btn-sm btn-info">View
+                                        Profile</a></div>
+                            </div>
+                        </li>
+                        {%endif%}
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar" data-sidebarbg="skin6">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{% url 'home'%}"
+                                aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
+                                    class="hide-menu">Dashboard</span></a></li>
+                     
+                                   
+                        <li class="list-divider"></li>
+                        <li class="nav-small-cap"><span class="hide-menu">Components</span></li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
+                                aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
+                                    class="hide-menu">Incidents </span></a>
+                                    {% if user.is_authenticated %}
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item"><a href="{% url 'reportform'%}" class="sidebar-link"><span
+                                            class="hide-menu"> Report  an Incident
+                                        </span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="form-input-grid.html" class="sidebar-link"><span
+                                            class="hide-menu"> Saved Incidents
+                                        </span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="form-checkbox-radio.html" class="sidebar-link"><span
+                                            class="hide-menu"> Sent Incidents
+                                        </span></a>
+                                </li>
+                            </ul>
+                            {%else%}
+                             <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item"><a href="{% url 'login'%}" class="sidebar-link"><span
+                                            class="hide-menu"> Report  an Incident
+                                        </span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="form-input-grid.html" class="sidebar-link"><span
+                                            class="hide-menu"> Saved Incidents
+                                        </span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="form-checkbox-radio.html" class="sidebar-link"><span
+                                            class="hide-menu"> Sent Incidents
+                                        </span></a>
+                                </li>
+                            </ul>
+                            {%endif%}
+                        </li>
+                                               </li>
+                       
+                        </li>
+                      
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="ui-cards.html"
+                                aria-expanded="false"><i data-feather="sidebar" class="feather-icon"></i><span
+                                    class="hide-menu">Others
+                                </span></a>
+                        </li>
+                        <li class="list-divider"></li>
+                        <li class="nav-small-cap"><span class="hide-menu">Authentication</span></li>
+                        {% if user.is_authenticated %}
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{% url 'logout' %}"
+                            aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
+                                class="hide-menu">Logout</span></a></li>
+                       
+                        </li>
+                          {% else %}
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{%url 'login'%}"
+                                aria-expanded="false"><i data-feather="lock" class="feather-icon"></i><span
+                                    class="hide-menu">Login
+                                </span></a>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link"
+                                href="{% url 'register'%}" aria-expanded="false"><i data-feather="lock"
+                                    class="feather-icon"></i><span class="hide-menu">Register
+                                </span></a>
+                        </li>
+                       
+                       {%endif%}
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+      
+
+    </div>
+   
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <form class="mt-3">
+                    <div class="form-group">
+                        
+                        <!-- <input type="text" class="form-control" id="nametext" aria-describedby="name"
+                            placeholder="Name">
+                        <small id="name" class="form-text text-muted">Helper Text</small> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+     <div class="container-flex">
+        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
+           >
+          
+            <!-- <label class="" for="inlineFormCustomSelect">deplar</label>
+            <input type="text" class="ml-4"> -->
+            {% if user.is_authenticated %}
+            {% for message in messages %}
+            <h4 class="text-success">{{message}}
+            </h4>
+            {% endfor %}
+            {%endif%}
+            <form  method="POST">
+                {% csrf_token %}
+                <table> 
+                    <tr><td><h2 class="mt-3 text-dark">New Master Incident</h2>
+                        <h3 class="mt-3 text-dark ">Initial Reporting</h3></td></tr>
+                      
+                    <tr>  
+                        <td class="tdLabel mt-3"><label for="register_country" class="label mt-3">Incident Department:</label></td>  
+                        <td><select name="incident_department" id="register_country" class="ml-4  mt-3" style="width:180px">  
+                            <option  value="CH">Corporate Headoffice</option>
+                            <option value="OD">Operation Department</option>
+                            <option value="WS">Work Station</option>
+                            <option value="MD">Marketing Division</option> 
+                    </select>  
+                    </td>  
+                    </tr>  
+                    <tr >  
+                        <td class=""><label for="register_name" class="label  mt-3">Description :</label></td>  
+                        <td> <textarea name="description" class=" float-right  mt-3"  placeholder="Enter Detail" style="width: 180px;"></textarea></td>  
+                    </tr> 
+                    <tr>  
+                        <td class="tdLabel"><label for="register_name" class="label  mt-3">Date :</label></td>  
+                        <td> <input type="date" name="date" class=" float-right  mt-3 "   style="width: 180px;"/></td>  
+                    </tr> 
+                    <tr>  
+                        <td class="tdLabel"><label for="register_name" class="label  mt-3">Time :</label></td>  
+                        <td> <input type="time" name="time" class=" float-right  mt-3 "   style="width: 180px;"/></td>  
+                    </tr> 
+                    <tr >  
+                        <td class=""><label for="register_name" class="label  mt-3">Incident Location :</label></td>  
+                        <td> <textarea name="incident_location" class=" float-right  mt-3 "  placeholder="Enter Detail" style="width: 180px;"></textarea></td>  
+                    </tr>
+                    <tr>  
+                        <td class="tdLabel"><label for="register_country" class="label  mt-3">Initial Severity :</label></td>  
+                        <td><select name="severity" id="register_country" class="ml-4  mt-3" style="width:180px">  
+                            <option  value="M">Mild</option>
+                            <option value="MD">Moderate</option>
+                            <option value="S">Severe</option>
+                            <option value="F">Fetal</option> 
+                    </select>  
+                    </td>  
+                    </tr> 
+                    <tr >  
+                        <td class=""><label for="register_name" class="label  mt-3">Suspected Cause :</label></td>  
+                        <td> <textarea name="cause" class=" float-right mt-3 "  placeholder="Enter Detail" style="width: 180px;"></textarea></td>  
+                    </tr> 
+                    <tr class="mt-3" >  
+                        <td class=""><label for="register_name" class="label  mt-3">Immediate Action Taken :</label></td>  
+                        <td> <textarea name="actions" class=" float-right  mt-3 "  placeholder="Enter Detail" style="width: 180px;"></textarea></td>  
+                    </tr>  
+                    <tr >  
+                        <td class=""><label for="register_name" class="label mt-3">Sub Incident Type :</label></td>  
+                        <td> <input type="checkbox" id="vehicle1" name="type_env" value="t" class="ml-3  mt-3">
+                            <label for="vehicle1"> Environmental Incident</label><br>
+                            <input type="checkbox" id="vehicle1" name="type_inju" value="t" class="ml-3 ">
+                            <label for="vehicle1"> Injury/Illness</label><br>
+                            <input type="checkbox" id="vehicle1" name="type_property" value="t" class="ml-3">
+                            <label for="vehicle1"> Property Damage</label><br>
+                            <input type="checkbox" id="vehicle1" name="type_vehicle" value="t" class="ml-3">
+                            <label for="vehicle1"> Vehicle</label><br>
+                        </td>  
+                    </tr>  
+                    <tr>
+                        <td><label for="register_name" class="label mt-3">Reported By</label>
+                         
+                        </td>
+                       <td> <input type="hidden" id="vehicle1" name="reportedby_id" value="{{request.user.id}}"><span>{{request.user}}</span></td>
+                    </tr>
+                   
+                   
+                    <tr>  
+                        <td colspan="2"><div class="text-right" ><input type="submit" id="register_0" class="ml-3 btn-primary" value="save"/> <input type="submit" id="register_0" class="ml-3 btn-primary" value="Save for leter"/> <input type="submit" class="ml-3 btn-dark" id="register_0" value="Cancel"/>
+                    </div></td>  
+                    </tr>  
+                    </table>  
+            <!-- <label class="float-left" for="inlineFormCustomSelect"> Department</label>
+            <select class="form-group float-right" id="inlineFormCustomSelect">
+                <option selected value="">Corporate Headoffice</option>
+                <option value="">Operation Department</option>
+                <option value="">Work Station</option>
+                <option value="">Marketing Division</option>
+            </select><br>
+          
+                <label class="col-sm-2 " >Description</label>
+                 <textarea name="detail" class=" float-right "  placeholder="Enter Detail"></textarea>
+               <br>
+               <label class="float-left mt-3" >Time</label>
+                <input type="time" class=" float-right mt-3" value="22:33:00"><br>
+          
+               <label class="" >Description</label>
+               <input type="text" class="ml-4"> -->
+                 <!-- <div class="col-lg-5 col-md-5 ">
+                  department:<input type="text"><br>
+                  <label class="" for="inlineFormCustomSelect">deplar</label>
+                                        <select class="form-group" id="inlineFormCustomSelect">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                                                     </select>
+                    </div> -->
+                </form>
+        </div>
+
+     <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+       
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+      
+        <!-- ============================================================== -->
+   </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="{% static 'assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/libs/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'assets/libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- apps -->
+    <!-- apps -->
+    <script src="{% static 'dist/js/app-style-switcher.js' %}"></script>
+    <script src="{% static 'dist/js/feather.min.js' %}"></script>
+    <script src="{% static 'assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js' %}"></script>
+    <script src="{% static 'dist/js/sidebarmenu.js' %}"></script>
+    <!--Custom JavaScript -->
+    <script src="{% static 'dist/js/custom.min.js' %}"></script>
+    <!--This page JavaScript -->
+    <script src="{% static 'assets/extra-libs/c3/d3.min.js' %}"></script>
+    <script src="{% static 'assets/extra-libs/c3/c3.min.js' %}"></script>
+    <script src="{% static 'assets/libs/chartist/dist/chartist.min.js' %}"></script>
+    <script src="{% static 'assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js' %}"></script>
+    <script src="{% static 'assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js' %}"></script>
+    <script src="{% static 'assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js' %}"></script>
+    <script src="{% static 'dist/js/pages/dashboards/dashboard1.min.js' %}"></script>
+</body>
+
+</html>
